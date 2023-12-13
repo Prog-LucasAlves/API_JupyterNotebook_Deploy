@@ -4,19 +4,22 @@ on: pull_request
 
 jobs:
     Continuous-Integration:
-        runs-on: ubuntu-lastet
-        steps:
-            - name: Check out repository
-              uses: actions/checkout@v3
-
-            - name: Set up python
-              id: setup-python
-              uses: actions/setup-python@v4
-              with:
-                python-version: '3.11.5'
-            
-            - name: Install requirements
-              run: pip install -r requirements-dev.txt
-
-            - name: List directory contents
-              run: pytest -v testes.py
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out repository
+          uses: actions/checkout@v3
+  
+        - name: Set up python
+          id: setup-python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.11.3'
+  
+        - name: Install requirements
+          run: pip install -r requirements-dev.txt
+  
+        - name: List directory contents
+          run: ls -la
+  
+        - name: Run tests
+          run: pytest -v
