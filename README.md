@@ -2,7 +2,7 @@
 
 APIs são mecanismos que permitem que dois componentes de software se comuniquem usando um conjunto de definições e protocolos. Por exemplo, o sistema de software do instituto meteorológico contém dados meteorológicos diários. A aplicação para a previsão do tempo em seu telefone “fala” com esse sistema por meio de APIs e mostra atualizações meteorológicas diárias no telefone.
 
-ref.:[API](https://pt.wikipedia.org/wiki/Interface_de_programa%C3%A7%C3%A3o_de_aplica%C3%A7%C3%B5es#:~:text=A%20API%20permitem%20utilizar%20caracter%C3%ADsticas,aceder%20a%20arquivos%2C%20codificar%20dados.)
+ref.: [API - Wiki](https://pt.wikipedia.org/wiki/Interface_de_programa%C3%A7%C3%A3o_de_aplica%C3%A7%C3%B5es#:~:text=A%20API%20permitem%20utilizar%20caracter%C3%ADsticas,aceder%20a%20arquivos%2C%20codificar%20dados.)
 
 ![ ](https://github.com/Prog-LucasAlves/API_JupyterNotebook_Deploy/blob/master/image/API_01.png)
 
@@ -39,3 +39,24 @@ O protocolo HTTP é a base usada por trás das APIs REST e as "requisita" utiliz
 - GET: (Read) Obter um recurso
 - PUT: (Update) Atualizar um recurso
 - DELETE: Remover um recurso
+
+## *Para realizar esse projeto vou(vamos) utilizar o VSCode e o terminal(PowerShell)*
+
+## Python
+
+- Vou utilizar nesse projeto a versão o python **3.11.3** atraves dp *pyenv*
+
+´´
+> pyenv local 3.11.3
+´´
+Ref.: [pyenv](https://github.com/pyenv/pyenv)
+
+## Criando o ambiente virtual
+
+´´
+> poetry init
+´´
+
+~~~python
+...
+~~~
