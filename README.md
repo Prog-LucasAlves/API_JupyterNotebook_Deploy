@@ -44,19 +44,16 @@ O protocolo HTTP é a base usada por trás das APIs REST e as "requisita" utiliz
 
 ## Python
 
-- Vou utilizar nesse projeto a versão o python **3.11.3** atraves dp *pyenv*
+- Vou utilizar nesse projeto a versão o python **3.11.3** atraves do *pyenv*
 
-´´
+```python
 > pyenv local 3.11.3
-´´
+```
+
 Ref.: [pyenv](https://github.com/pyenv/pyenv)
 
 ## Criando o ambiente virtual
 
-´´
+```python
 > poetry init
-´´
-
-~~~python
-...
-~~~
+```
