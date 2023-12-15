@@ -26,6 +26,7 @@ As APIs são classificadas por tipo de arquitetura:
 - **WebSocket** ativa a comunicação bidirecional entre cliente e servidor, tornando o programa mais interativo. As informações são enviadas no formato JSON.
 
 ... Vamos utilizar **API REST** com o framework **FastAPI**
+Ref.: [FastAPI](https://fastapi.tiangolo.com/)
 
 ## Diferença Entre REST e RESTful
 
@@ -56,4 +57,44 @@ Ref.: [pyenv](https://github.com/pyenv/pyenv)
 
 ```python
 > poetry init
+```
+
+Ref.: [poetry](https://python-poetry.org/)
+
+## Ativando nosso ambiente virtual
+
+```python
+> poetry shell
+```
+
+## Instalando o FastAPI
+
+FastAPI é um moderno e rápido (alta performance) framework web para construção de APIs com Python 3.8 ou superior, baseado nos type hints padrões do Python.
+
+```python
+> poetry add fastapi
+```
+
+## Instalando o Uvicorn
+
+Uvicorn é uma implementação de servidor web ASGI para Python.
+
+```python
+> poetry add uvicorn
+```
+
+Ref.: [uvicorn](https://www.uvicorn.org/)
+
+## Criando endpoint
+
+Endpoints são os pontos de acesso de uma API. Eles são definidos por uma URL, um método e um conjunto de parâmetros.
+
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Olá": "Mundo"}
 ```
