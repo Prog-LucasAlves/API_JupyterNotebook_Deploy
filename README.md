@@ -25,7 +25,8 @@ As APIs são classificadas por tipo de arquitetura:
 - **REST** (Representational State Transfer) é a ferramenta mais popular na atualidade. Esse tipo de interface opera o protocolo HTTP para troca de dados e é frequentemente usada em aplicações web.
 - **WebSocket** ativa a comunicação bidirecional entre cliente e servidor, tornando o programa mais interativo. As informações são enviadas no formato JSON.
 
-... Vamos utilizar **API REST** com o framework **FastAPI**
+... Vamos utilizar **API REST** com o framework **FastAPI**.
+
 Ref.: [FastAPI](https://fastapi.tiangolo.com/)
 
 ## Diferença Entre REST e RESTful
@@ -48,7 +49,7 @@ O protocolo HTTP é a base usada por trás das APIs REST e as "requisita" utiliz
 - Vou utilizar nesse projeto a versão o python **3.11.3** atraves do *pyenv*
 
 ```python
-> pyenv local 3.11.3
+pyenv local 3.11.3
 ```
 
 Ref.: [pyenv](https://github.com/pyenv/pyenv)
@@ -56,7 +57,7 @@ Ref.: [pyenv](https://github.com/pyenv/pyenv)
 ## Criando o ambiente virtual
 
 ```python
-> poetry init
+poetry init
 ```
 
 Ref.: [poetry](https://python-poetry.org/)
@@ -64,7 +65,7 @@ Ref.: [poetry](https://python-poetry.org/)
 ## Ativando nosso ambiente virtual
 
 ```python
-> poetry shell
+poetry shell
 ```
 
 ## Instalando o FastAPI
@@ -72,7 +73,7 @@ Ref.: [poetry](https://python-poetry.org/)
 FastAPI é um moderno e rápido (alta performance) framework web para construção de APIs com Python 3.8 ou superior, baseado nos type hints padrões do Python.
 
 ```python
-> poetry add fastapi
+poetry add fastapi
 ```
 
 ## Instalando o Uvicorn
@@ -80,7 +81,7 @@ FastAPI é um moderno e rápido (alta performance) framework web para construç�
 Uvicorn é uma implementação de servidor web ASGI para Python.
 
 ```python
-> poetry add uvicorn
+poetry add uvicorn
 ```
 
 Ref.: [uvicorn](https://www.uvicorn.org/)
@@ -88,6 +89,10 @@ Ref.: [uvicorn](https://www.uvicorn.org/)
 ## Criando endpoint
 
 Endpoints são os pontos de acesso de uma API. Eles são definidos por uma URL, um método e um conjunto de parâmetros.
+
+```python
+echo > main.py
+```
 
 ```python
 from fastapi import FastAPI
@@ -98,3 +103,55 @@ app = FastAPI()
 def read_root():
     return {"Olá": "Mundo"}
 ```
+
+## Executando o servidor
+
+Para executar o servidor, precisamos usar o Uvicorn e passar o nome do **arquivo(*main*)** e o nome da **variável(*app*)** que contém a instância do FastAPI.
+
+```python
+> uvicorn main:app --reload
+```
+
+## Testes Unitários
+
+São testes que verificam se uma parte específica do código, costumeiramente a nível de função, está funcionando corretamente.
+
+```python
+poetry add pytest
+```
+
+Ref.: [pytest](https://docs.pytest.org/en/7.4.x/)
+
+```python
+echo > test_api.py
+```
+
+```python
+from fastapi.testclient import TestClient
+
+from main import app
+
+client = TestClient(app)
+
+
+def test_main_status_code():
+    response = client.get("/")
+    assert response.status_code == 200
+
+
+def test_main_response():
+    response = client.get("/")
+    assert response.json() == {"Hello": "World"}
+```
+
+## Rodando os testes
+
+```python
+pytest -v test_api.py
+```
+
+## CI (Continuous Integration)
+
+Integração contínua (CI) é uma prática de automatizar a integração de alterações de código de vários contribuidores em um único projeto de software. É uma prática recomendada primária de DevOps, permitindo que os desenvolvedores mesclem com frequência as alterações de código em um repositório central onde builds e testes são executados. Ferramentas automatizadas são usadas para afirmar a correção do novo código antes da integração.
+
+:construction:
