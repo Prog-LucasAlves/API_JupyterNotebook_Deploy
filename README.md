@@ -155,3 +155,11 @@ pytest -v test_api.py
 Integração contínua (CI) é uma prática de automatizar a integração de alterações de código de vários contribuidores em um único projeto de software. É uma prática recomendada primária de DevOps, permitindo que os desenvolvedores mesclem com frequência as alterações de código em um repositório central onde builds e testes são executados. Ferramentas automatizadas são usadas para afirmar a correção do novo código antes da integração.
 
 :construction:
+
+## Colocando nossa aplicação no Ar
+
+Vamos usar o site
+
+https://dashboard.render.com/login
+
+[API NO AR](https://api-produtos-e247.onrender.com/docs)
