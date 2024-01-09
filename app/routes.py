@@ -1,5 +1,5 @@
 """Routes API"""
-from fastapi import APIRouter, Depends, HTTPException, FastAPI
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from .schema import ProdutosSchema
@@ -7,7 +7,11 @@ from .config import get_db
 from .model import Produto
 
 router = APIRouter()
-app = FastAPI()
+
+
+@router.get("/")
+def produtos():
+    return {"message": "Produtos API"}
 
 
 # Rota para listar os produtos.
